@@ -17,6 +17,7 @@ using AdventOfCode2023.Day7;
 //Console.WriteLine(SolutionDay6.SolveGold());
 
 Console.WriteLine(SolutionDay7.Solve());
+Console.WriteLine(SolutionDay7.SolveGold());
 
 
 
