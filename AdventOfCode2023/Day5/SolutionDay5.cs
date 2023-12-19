@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Jamarino.IntervalTree;
+﻿using Jamarino.IntervalTree;
 
-namespace AdventOfCode
+namespace AdventOfCode2023.Day5
 {
     public static class SolutionDay5
     {
@@ -20,11 +14,11 @@ namespace AdventOfCode
 
         public static UInt32 Solve()
         {
-            var lines = File.ReadAllLines("inputDay5.txt");
-            
+            var lines = File.ReadAllLines("Day5/input.txt");
+
             var seeds = GetSeeds(lines[0]);
 
-            for(int i = 0; i < lines.Length; i++)
+            for (int i = 0; i < lines.Length; i++)
             {
                 var line = lines[i];
 
@@ -44,7 +38,7 @@ namespace AdventOfCode
 
         public static UInt32 SolveGold()
         {
-            var lines = File.ReadAllLines("inputDay5.txt");
+            var lines = File.ReadAllLines("Day5/input.txt");
 
             for (int i = 0; i < lines.Length; i++)
             {
@@ -71,13 +65,13 @@ namespace AdventOfCode
 
         private static void FillSeed(Seed seed)
         {
-        //        seed.Soil = MapValue(SeedToSoil, seed.Id);
-        //        seed.Fertilizer = MapValue(SoilToFertilizer, seed.Soil);
-        //        seed.Water = MapValue(FertilizerToWater, seed.Fertilizer);
-        //        seed.Light = MapValue(WaterToLight, seed.Water);
-        //        seed.Temp = MapValue(LightToTemperature, seed.Light);
-        //        seed.Humidity = MapValue(TemperatureToHumidity, seed.Temp);
-        //        seed.Location = MapValue(HumidityToLocation, seed.Humidity);
+            //        seed.Soil = MapValue(SeedToSoil, seed.Id);
+            //        seed.Fertilizer = MapValue(SoilToFertilizer, seed.Soil);
+            //        seed.Water = MapValue(FertilizerToWater, seed.Fertilizer);
+            //        seed.Light = MapValue(WaterToLight, seed.Water);
+            //        seed.Temp = MapValue(LightToTemperature, seed.Light);
+            //        seed.Humidity = MapValue(TemperatureToHumidity, seed.Temp);
+            //        seed.Location = MapValue(HumidityToLocation, seed.Humidity);
         }
 
         private static UInt32 FillSeedGold(UInt32 seed)
@@ -99,7 +93,7 @@ namespace AdventOfCode
         private static LightIntervalTree<UInt32, (UInt32, UInt32, UInt32)> MapMapper(string[] lines, int i)
         {
             LightIntervalTree<UInt32, (UInt32, UInt32, UInt32)> maps = new LightIntervalTree<UInt32, (UInt32, UInt32, UInt32)>();
-            
+
             for (int j = 1; i + j < lines.Length; j++)
             {
                 if (string.IsNullOrEmpty(lines[i+j])) break;
@@ -109,7 +103,7 @@ namespace AdventOfCode
                 var source = UInt32.Parse(values[1]);
                 var range = UInt32.Parse(values[2]);
 
-                maps.Add(source, source + range - 1,(dest, source, range));
+                maps.Add(source, source + range - 1, (dest, source, range));
             }
 
             return maps;
@@ -145,7 +139,7 @@ namespace AdventOfCode
                     min = Math.Min(min, location);
                 }
             }
-            
+
             return min;
         }
     }

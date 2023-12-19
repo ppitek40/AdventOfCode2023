@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AdventOfCode
+﻿namespace AdventOfCode2023.Day4
 {
     public static class SolutionDay4
     {
         public static int Solve()
         {
-            var lines = File.ReadAllLines("inputDay4.txt");
+            var lines = File.ReadAllLines("Day4/input.txt");
 
             var result = 0;
 
@@ -33,7 +27,7 @@ namespace AdventOfCode
 
         public static int SolveGold()
         {
-            var lines = File.ReadAllLines("inputDay4.txt").Select(l => new LineWithCount{ Line = l, Count = 1 }).ToArray();
+            var lines = File.ReadAllLines("Day4/input.txt").Select(l => new LineWithCount { Line = l, Count = 1 }).ToArray();
 
             var result = 0;
 

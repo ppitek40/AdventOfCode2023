@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AdventOfCode
+﻿namespace AdventOfCode2023.Day2
 {
     public static class SolutionDay2
     {
         public static (int, int) Solve()
         {
-            var lines = File.ReadAllLines("input.txt");
+            var lines = File.ReadAllLines("Day2/input.txt");
 
             int sum = 0, powerSum = 0;
 
@@ -46,7 +39,7 @@ namespace AdventOfCode
         {
             foreach (var value in set)
             {
-                if (value.Item2 == "red" ) minimalValues.Item1 = Math.Max(minimalValues.Item1,value.Item1);
+                if (value.Item2 == "red") minimalValues.Item1 = Math.Max(minimalValues.Item1, value.Item1);
                 if (value.Item2 == "blue") minimalValues.Item2 = Math.Max(minimalValues.Item2, value.Item1);
                 if (value.Item2 == "green") minimalValues.Item3 = Math.Max(minimalValues.Item3, value.Item1);
             }
@@ -73,7 +66,7 @@ namespace AdventOfCode
             var result = new List<(int, string)>();
             var cubes = set.Split(',');
 
-            foreach(var cube in cubes)
+            foreach (var cube in cubes)
             {
                 var values = cube.Split(' ', StringSplitOptions.RemoveEmptyEntries);
                 var number = int.Parse(values[0]);

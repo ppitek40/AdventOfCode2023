@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AdventOfCode
+﻿namespace AdventOfCode2023.Day6
 {
     public static class SolutionDay6
     {
         public static int Solve()
         {
-            var lines = File.ReadAllLines("inputDay6.txt");
+            var lines = File.ReadAllLines("Day6/input.txt");
 
             var TimesRaw = lines[0].Split(':')[1];
             var DistancesRaw = lines[1].Split(':')[1];
@@ -33,7 +27,7 @@ namespace AdventOfCode
 
         public static int SolveGold()
         {
-            var lines = File.ReadAllLines("inputDay6.txt");
+            var lines = File.ReadAllLines("Day6/input.txt");
 
             var TimesRaw = lines[0].Split(':')[1];
             var DistancesRaw = lines[1].Split(':')[1];
@@ -62,9 +56,9 @@ namespace AdventOfCode
             {
                 if (checkLeft && middle - i > 0)
                 {
-                        var result = GetResult(middle - i, time);
-                        if (result > lastLeft) lastLeft = result;
-                        else if (result < distance) checkLeft = false;
+                    var result = GetResult(middle - i, time);
+                    if (result > lastLeft) lastLeft = result;
+                    else if (result < distance) checkLeft = false;
 
                     if (result > distance) sum++;
                 }
@@ -83,17 +77,8 @@ namespace AdventOfCode
 
         private static long GetResult(long buttonPresed, long time)
         {
-            long speed = 0;
-            long distance = 0;
-
-            for (long i = 0; i < time; i++)
-            {
-                if (i < buttonPresed) speed++;
-                else
-                {
-                    distance += speed;
-                }
-            }
+            long speed = buttonPresed;
+            long distance = (time - buttonPresed) * speed;
 
             return distance;
         }
