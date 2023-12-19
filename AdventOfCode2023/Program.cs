@@ -1,5 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using AdventOfCode2023.Day7;
+using AdventOfCode2023.Day8;
 
 
 //Console.WriteLine(SolutionDay1.Solve());
@@ -16,8 +16,10 @@ using AdventOfCode2023.Day7;
 //Console.WriteLine(SolutionDay6.Solve());
 //Console.WriteLine(SolutionDay6.SolveGold());
 
-Console.WriteLine(SolutionDay7.Solve());
-Console.WriteLine(SolutionDay7.SolveGold());
+//Console.WriteLine(SolutionDay7.Solve());
+//Console.WriteLine(SolutionDay7.SolveGold());
+
+Console.WriteLine(SolutionDay8.SolveGold());
 
 
 
