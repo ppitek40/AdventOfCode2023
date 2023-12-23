@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Day10\input.txt" />
     <None Remove="Day1\input.txt" />
     <None Remove="Day2\input.txt" />
     <None Remove="Day4\input.txt" />
@@ -15,9 +16,13 @@
     <None Remove="Day6\input.txt" />
     <None Remove="Day7\input.txt" />
     <None Remove="Day8\input.txt" />
+    <None Remove="Day9\input.txt" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Day10\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Day1\input.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -37,6 +42,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Day8\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Day9\input.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
